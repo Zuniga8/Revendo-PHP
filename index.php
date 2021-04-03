@@ -16,7 +16,7 @@ $idade = 27;
 
 if ($idade >= 6 && $idade <= 12){
 
-    //echo 'infantil';
+    //echo 'infantil'
     for($i =0; $i < count($categorias); $i++){
         if ($categorias[$i] == "infantil"){
             echo "<br> O nadador ".$nome." compete na categoria infantil";
