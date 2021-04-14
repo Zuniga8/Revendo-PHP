@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+//session_start();
+include "servicos/servicoMensagemSessao.php";
 ?>
 <!doctype html>
 <html>
@@ -18,7 +18,7 @@ session_start();
     <p> FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES </p>
     <form action="script.php" method="post">
         <?php
-            $mensagemdeerro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+            $mensagemdeerro = obterMEnsagemErro();
             if(!empty($mensagemdeerro)) {
                 echo $mensagemdeerro;
             }
@@ -32,7 +32,7 @@ session_start();
 
 <h1>
 <?php 
-    $mensagemdesucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+    $mensagemdesucesso = obterMEnsagemSucesso();
     if(!empty($mensagemdesucesso)){
         echo $mensagemdesucesso;
     }
